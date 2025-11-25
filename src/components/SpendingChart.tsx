@@ -34,6 +34,32 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ transactions }) => {
     return colors[category] || '#6b7280';
   };
 
+  const getCategoryIcon = (category: string): string => {
+    const icons: { [key: string]: string } = {
+      food: '🍎',
+      transport: '🚗',
+      housing: '🏠',
+      entertainment: '🎮',
+      healthcare: '💊',
+      shopping: '🛍️',
+      other: '📦'
+    };
+    return icons[category] || '📦';
+  };
+
+  const getCategoryName = (category: string): string => {
+    const names: { [key: string]: string } = {
+      food: 'Еда',
+      transport: 'Транспорт',
+      housing: 'Жилье',
+      entertainment: 'Развлечения',
+      healthcare: 'Здоровье',
+      shopping: 'Шоппинг',
+      other: 'Другое'
+    };
+    return names[category] || category;
+  };
+
   if (data.length === 0) {
     return (
       <div className="spending-chart">
@@ -50,7 +76,7 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ transactions }) => {
     <div className="spending-chart">
       <h3>📊 Расходы по категориям</h3>
       <div className="chart-container">
-        {data.map((item) => ( // Убрали index - он не используется
+        {data.map((item) => (
           <div key={item.category} className="chart-item">
             <div className="chart-bar">
               <div 
@@ -76,31 +102,5 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ transactions }) => {
     </div>
   );
 };
-
-function getCategoryIcon(category: string): string {
-  const icons: { [key: string]: string } = {
-    food: '🍎',
-    transport: '🚗',
-    housing: '🏠',
-    entertainment: '🎮',
-    healthcare: '💊',
-    shopping: '🛍️',
-    other: '📦'
-  };
-  return icons[category] || '📦';
-}
-
-function getCategoryName(category: string): string {
-  const names: { [key: string]: string } = {
-    food: 'Еда',
-    transport: 'Транспорт',
-    housing: 'Жилье',
-    entertainment: 'Развлечения',
-    healthcare: 'Здоровье',
-    shopping: 'Шоппинг',
-    other: 'Другое'
-  };
-  return names[category] || category;
-}
 
 export default SpendingChart;
