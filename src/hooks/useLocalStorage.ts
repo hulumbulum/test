@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; // Убрали useEffect - он не используется
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const [storedValue, setStoredValue] = useState<T>(() => {
