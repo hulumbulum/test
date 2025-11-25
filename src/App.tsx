@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; // Убрали React - он не используется
 import './styles/App.css';
 import OverviewCards from './components/OverviewCards';
 import TransactionList from './components/TransactionList';
