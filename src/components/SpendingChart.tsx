@@ -50,7 +50,7 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ transactions }) => {
     <div className="spending-chart">
       <h3>📊 Расходы по категориям</h3>
       <div className="chart-container">
-        {data.map((item, index) => (
+        {data.map((item) => ( // Убрали index - он не используется
           <div key={item.category} className="chart-item">
             <div className="chart-bar">
               <div 
