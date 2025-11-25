@@ -18,9 +18,3 @@
 - CSS3 с переменными
 - Local Storage API
 
-## 📦 Установка и запуск
-
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/ваш-аккаунт/budgetmaster.git
-cd budgetmaster
